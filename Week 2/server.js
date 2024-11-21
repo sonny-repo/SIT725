@@ -12,6 +12,11 @@ const addTwoNumber= (n1,n2) => {
 app.get("/addTwoNumber", (req,res)=>{
     const n1= parseInt(req.query.n1);
     const n2=parseInt(req.query.n2);
+
+    if (isNaN(a) || isNaN(b)) {
+        throw new Error('Parameter is not a number!');
+    }
+
     const result = addTwoNumber(n1,n2);
     res.json({statuscocde:200, data: result }); 
 });
@@ -23,6 +28,11 @@ const minusTwoNumber= (n1,n2) => {
 app.get("/minusTwoNumber", (req,res)=>{
     const n1= parseInt(req.query.n1);
     const n2=parseInt(req.query.n2);
+
+    if (isNaN(a) || isNaN(b)) {
+        throw new Error('Parameter is not a number!');
+    }
+
     const result = minusTwoNumber(n1,n2);
     res.json({statuscocde:200, data: result }); 
 });
@@ -34,6 +44,11 @@ const multiplyTwoNumber= (n1,n2) => {
 app.get("/multiplyTwoNumber", (req,res)=>{
     const n1= parseInt(req.query.n1);
     const n2=parseInt(req.query.n2);
+
+    if (isNaN(a) || isNaN(b)) {
+        throw new Error('Parameter is not a number!');
+    }
+
     const result = multiplyTwoNumber(n1,n2);
     res.json({statuscocde:200, data: result }); 
 });
@@ -42,9 +57,14 @@ app.get("/multiplyTwoNumber", (req,res)=>{
 const divideTwoNumber= (n1,n2) => {
     return n1/n2;
 }
-app.get("/divideTwoNumber", (req,res)=>{
+app.post("/divideTwoNumber", (req,res)=>{
     const n1= parseInt(req.query.n1);
     const n2=parseInt(req.query.n2);
+
+    if (isNaN(a) || isNaN(b)) {
+        throw new Error('Parameter is not a number!');
+    }
+
     const result = divideTwoNumber(n1,n2);
     res.json({statuscocde:200, data: result }); 
 });
