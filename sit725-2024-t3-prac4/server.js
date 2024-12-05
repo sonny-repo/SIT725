@@ -12,16 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 var port = process.env.port || 3000;
 
 
-// // Serve static files from the "public" directory
-// app.use(express.static(path.join(__dirname, 'public')));
-
-// // Route to serve the index.html file
-// app.get('/', function (req, res) {
-//     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-// });
-
 //Week 4 - Add a Database
- 
+
+//Inserting Data Function 
 async function insertData() {
     const client = new MongoClient(uri);
  
@@ -51,7 +44,7 @@ async function insertData() {
     }
 }
  
- 
+//Pushing Data to myDB
 async function fetchAllData() {
     const client = new MongoClient(uri);
  
