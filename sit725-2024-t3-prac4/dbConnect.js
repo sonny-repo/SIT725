@@ -1,8 +1,11 @@
-const { response } = require(‘express’);
-const { MongoClient, ServerApiVersion } = require("mongodb");
+let { response } = require(‘express’);
+let app = expres();
+
+import { MongoClient, ServerApiVersion } from "mongodb";
  
 // Replace the placeholder with your Atlas connection string
 const uri = "mongodb://localhost:27017/";
+
  
 async function insertData() {
     const client = new MongoClient(uri);
