@@ -1,3 +1,4 @@
+const { response } = require("express");
 const { MongoClient, ServerApiVersion } = require("mongodb");
  
 // Replace the placeholder with your Atlas connection string
@@ -56,7 +57,6 @@ async function fetchAllData() {
         await client.close();
     }
 }
- 
  
 // Run the function
 insertData();
