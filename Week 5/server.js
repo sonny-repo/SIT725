@@ -7,7 +7,7 @@ const { Socket } = require('socket.io');
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
 
-app.use(express.static(__dirname + '/view'));
+app.use(express.static(__dirname + '/views'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use('/api/cat',router);
