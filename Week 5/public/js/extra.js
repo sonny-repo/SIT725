@@ -7,10 +7,12 @@ const getProjectss = () => {
 }
 
 $(document).ready(function() {
+    $('.modal').modal();
     $('.materialboxed').materialbox();
     $('#formSubmit').click(() => {
         sumbitForm();
     })
     getProjects();
-    $('.modal').modal();
+
 })
+
