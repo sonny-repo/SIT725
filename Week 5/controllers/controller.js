@@ -2,7 +2,7 @@ let collection = require('../models/item');
 
 const postItem = (req,res) => {
     let item = req.body;
-    collection.postCat(cat, (err,result) => {
+    collection.postItem(item, (err,result) => {
         if (!err) {
             res.json({statusCode:201,data:result,message:'success'});
         }
