@@ -1,7 +1,7 @@
 let express = require('express');
 let app = express();
 let port = process.env.port || 3000;
-require('./dbConnect');
+require('./models/dbConnect');
 let router = require('./routers/routers');
 const { Socket } = require('socket.io');
 let http = require('http').createServer(app);
