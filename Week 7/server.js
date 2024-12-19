@@ -20,7 +20,6 @@ http.listen(port, ()=>{
 io.on('connection',(socket)=>{
     console.log('user connected');
 
-
     setInterval(()=>{
         x = parseInt(Math.random()*10);
         socket.emit('number', x);
