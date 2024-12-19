@@ -48,14 +48,35 @@
                 <!-- Modal Structure -->
                 <div id="modal1" class="modal modal-fixed-footer">
                     <div class="modal-content">
-                        <h4>Modal Header</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h4>New Post</h4>
+                        <div class="row">
+							<div class="input-field col s12">
+								<input id="title" type="text">
+								<label for="title">title</label>
+							</div>
+							<div class="input-field col s12">
+								<input id="path" type="text">
+								<label for="path">path</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<input id="subTitle" type="text">
+								<label for="subTitle">subTitle</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<input id="description" type="text">
+								<label for="description">description</label>
+							</div>
+						</div>
                     </div>
                     <div class="modal-footer">
                         <!-- Agree Button in Red-->
-                        <a href="#!" class="modal-close waves-effect waves-red btn-flat">Disagree</a>
+                        <a class="modal-close waves-effect waves-red btn-flat">Cancel</a>
                         <!-- Agree Button in Green-->
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                        <a class="modal-close waves-effect waves-green btn-flat" id="formSubmit">Post</a>
                     </div>
                 </div>
 
@@ -91,6 +112,7 @@
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="js/extra.js"></script>
     <script type="text/javascript" src="/public/js/env.js"></script>
+
 </body>
 
 </html>
