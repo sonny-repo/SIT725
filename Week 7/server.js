@@ -7,6 +7,7 @@ let router = require('./routers/routers');
 let http = require('http').createServer(app);
 let io = require('socket.io')(http);
 
+app.use(express.static('public'));
 app.use(express.static('views'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
