@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let controller = require('../controllers/controller');
-let path = require('path');
+// let path = require('path');
 
 router.post('/', function(req,res){
     controller.postItem(req,res);
