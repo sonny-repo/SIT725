@@ -1,16 +1,18 @@
-let collection = require('../models/item');
+let collection = require('../models/blog');
 
-const postItem = (req,res) => {
+const postBlog = (req,res) => {
+    console.log("controller.js - postBlog")
     let item = req.body;
-    collection.postItem(item, (err,result) => {
+    collection.postBlog(item, (err,result) => {
         if (!err) {
             res.json({statusCode:201,data:result,message:'success'});
         }
     });
 }
 
-const getAllItems = (req,res) => {
-    collection.getAllItems((error,result)=>{
+const getAllBlogs = (req,res) => {
+    console.log("controller.js - getAllBlogs")
+    collection.getAllBlogs((error,result)=>{
         if (!error) {
             res.json({statusCode:200,data:result,message:'success'});
         }
@@ -18,12 +20,12 @@ const getAllItems = (req,res) => {
 }
 
 const deleteItem = (req,res) => {
-    let cat = req.body;
-    collection.deleteOne(cat, (err,result) => {
+    let item = req.body;
+    collection.deleteOne(item, (err,result) => {
         if (!err) {
             res.json({statusCode:201,data:result,message:'success'});
         }
     });
 }
 
-module.exports = {postItem, getAllItems}
+module.exports = {postBlog, getAllBlogs, deleteItem}

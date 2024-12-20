@@ -1,3 +1,5 @@
+// const { get } = require("../../routers/routers");
+
 const getProjectss = () => {
     $.get('/api/projects', (response) => {
         if(response.statusCode == 200) {
@@ -20,7 +22,7 @@ const addCards = (items) => {
     });
 }
 
-const formSumitted = () => {
+const formSubmitted = () => {
     let formData = {};
     formData.title = $('#title').val();
     formData.path = $('#path').val();
@@ -28,14 +30,15 @@ const formSumitted = () => {
     formData.description = $('#description').val();
 
     console.log(formData);
-    postCat(formData);
+    postBlog(formData);
 }
 
-function postItem(item) {
+function postBlog(blog) {
+    console.log("extra.js - postBlog")
     $.ajax({
-        url:'/api/item',
+        url:'/api/blog',
         type:'POST',
-        data:cat,
+        data:blog,
         success: (result) => {
             if (result.statusCode === 201) {
                 alert('items posted');
@@ -45,27 +48,44 @@ function postItem(item) {
     });
 }
 
-function getAllCats() {
-    $.get('/api/item',(result)=>{
-        if (result.statusCode === 200) {
-            addCards(result.data);
-        }
+function getAllBlogs() {
+    console.log("Extra.js - getAllBlogs")
+    $.get('/api/blog',(result)=>{
+        // if (result.statusCode === 200) {
+        //     addCards(result.data);
+        // }
+        addCards(result.data);
     });
 }
 
-let socket = io();
-socket.on('number',(msg)=>{
-    console.log('Random Number: ' + msg);
-});
+// let socket = io();
+// socket.on('number',(msg)=>{
+//     console.log('Random Number: ' + msg);
+// });
+
+// $(document).ready(function(){
+//     $('.materialboxed').materialbox();
+//     $('#formSubmit').click(()=>{
+//         formSubmitted();
+//     });
+//     $('#refresh').click(()=>{
+//         getAllBlogs();
+//     });
+//     $('.modal').modal();
+//     getAllBlogs();
+//     // getProjectss();
+//     console.log('ready');
+// });
 
 $(document).ready(function(){
     $('.materialboxed').materialbox();
     $('#formSubmit').click(()=>{
-        formSumitted();
+        formSubmitted();
+    });
+    getAllBlogs();
+    $('#refresh').click(()=>{
+        getAllBlogs();
     });
     $('.modal').modal();
-    getAllItems();
-    // getProjectss();
-    console.log('ready');
+    console.log('Ready');
 });
-

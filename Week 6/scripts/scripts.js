@@ -20,14 +20,14 @@ const formSumitted = () => {
     formData.description = $('#description').val();
 
     console.log(formData);
-    postCat(formData);
+    postItem(formData);
 }
 
 function postItem(item) {
     $.ajax({
         url:'/api/item',
         type:'POST',
-        data:cat,
+        data:item,
         success: (result) => {
             if (result.statusCode === 201) {
                 alert('items posted');
@@ -37,7 +37,7 @@ function postItem(item) {
     });
 }
 
-function getAllCats() {
+function getAllItems() {
     $.get('/api/item',(result)=>{
         if (result.statusCode === 200) {
             addCards(result.data);

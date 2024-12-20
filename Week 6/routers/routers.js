@@ -4,15 +4,18 @@ let controller = require('../controllers/controller');
 // let path = require('path');
 
 router.post('/', function(req,res){
-    controller.postItem(req,res);
+    console.log("router.js - postBlog ")
+    controller.postBlog(req,res);
 });
 
 router.get('/', (req,res)=>{
-    controller.getAllItems(req,res);
+    console.log("router.js - getAllBlogs ")
+    controller.getAllBlogs(req,res);
 });
 
 router.delete('/', (req,res)=>{
-    controller.getAllItems(req,res);
+    console.log("router.js - getAllBlogs - delete")
+    controller.getAllBlogs(req,res);
 });
 
 

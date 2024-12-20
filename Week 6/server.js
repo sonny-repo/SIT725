@@ -11,28 +11,28 @@ app.use(express.static('public'));
 app.use(express.static('views'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
-app.use('/api/routers',router);
+app.use('/api/blog',router);
 
 http.listen(port, ()=>{
     console.log('express server started');
     console.log("App listening to: "+ port)
 });
 
-io.on('connection',(socket)=>{
-    console.log('user connected');
+// io.on('connection',(socket)=>{
+//     console.log('user connected');
 
-    setInterval(()=>{
-        x = parseInt(Math.random()*10);
-        socket.emit('number', x);
-        console.log('Emmiting Number '+x);
-    }, 1000)
+//     setInterval(()=>{
+//         x = parseInt(Math.random()*10);
+//         socket.emit('number', x);
+//         console.log('Emmiting Number '+x);
+//     }, 1000)
 
-    socket.on('disconnect', () => {
-        console.log('user disconnected');
-    });
+//     socket.on('disconnect', () => {
+//         console.log('user disconnected');
+//     });
 
 
-});
+// });
 
 //404 Not Found
 app.get("/:universalURL", (req, res) => {
